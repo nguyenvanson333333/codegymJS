@@ -171,9 +171,6 @@
             color: #333;
         }
 
-
-
-        /* textView */
         .textview {
             margin-left: 30px;
             font-variant: small-caps;
@@ -187,88 +184,62 @@
 </head>
 
 <body>
+
     <div class="mid">
         <label class="rocker">
-            <input type="checkbox" onclick="switchIt()">
-            <span class=" switch-left" id="on1">On</span>
-            <span class="switch-right" id="off1">Off</span>
+            <input type="checkbox" id="first" onclick="functionFirst()">
+            <span class=" switch-left">On</span>
+            <span class="switch-right">Off</span>
         </label>
         <label class="textview">GOOD</label>
     </div>
     <div class="mid"">
-        <label class="rocker">
-            <input type="checkbox" onclick="switchIt()">
-            <span class="switch-left" id="on2">ON</span>
-        <span class="switch-right" id="off2">OFF</span>
+        <label class=" rocker">
+        <input type="checkbox" id="second" onclick="functionFirst()">
+        <span class="switch-left">ON</span>
+        <span class="switch-right">OFF</span>
         </label>
         <label class=" textview">CHEAP</label>
     </div>
     <div class="mid">
         <label class="rocker">
-            <input type="checkbox" onclick="switchIt()">
-            <span class="switch-left" id="on3"">ON</span>
-            <span class=" switch-right" id="off3">OFF</span>
+            <input type="checkbox" id="third" onclick="functionFirst()">
+            <span class="switch-left">ON</span>
+            <span class=" switch-right">OFF</span>
         </label>
         <label class="textview">FAST</label>
     </div>
 
     <script>
-        // var bat1 = document.getElementById("on1").checked;
-        // var tat1 = document.getElementById("off1").checked;
 
-        // var bat2 = document.getElementById("on2").checked;
-        // var tat2 = document.getElementById("off2").checked;
+        function functionFirst() {
 
-        // var bat3 = document.getElementById("on3").checked;
-        // var tat3 = document.getElementById("off3").checked;
+            var c1 = document.getElementById("first");
+            var c2 = document.getElementById("second");
+            var c3 = document.getElementById("third");
+            var vc1 = c1.checked;
+            var vc2 = c2.checked;
+            var vc3 = c3.checked;
 
-        // if (bat1 == true && tat1 == flase) {
-        //     if ((bat2 == true) && (tat2 == false)) {
-        //         bat3 = false;
-        //         tat3 = true;
-        //     }
-        //     if (bat3) {
-        //         tat2;
-        //     }
-        // }
-
-        function switchIt() {
-            var bat1 = document.getElementById("on1").checked;
-            var tat1 = document.getElementById("off1").checked;
-
-            var bat2 = document.getElementById("on2").checked;
-            var tat2 = document.getElementById("off2").checked;
-
-            var bat3 = document.getElementById("on3").checked;
-            var tat3 = document.getElementById("off3").checked;
-
-            if (bat1) {
-                if (bat2) {
-                    tat3 = true;
-                } else if (bat3) {
-                    tat2 = true;
+            if (vc1 == true) {
+                if (vc2 == true) {
+                    c3.checked = false;
+                } else {
+                    c3.checked = true;
+                }
+            } else if (vc2 == true) {
+                if (vc1 == true) {
+                    c3.checked = false;
+                } else {
+                    c3.checked = true;
+                }
+            } else if (vc3 == true) {
+                if (vc1 == true) {
+                    c2.checked = false;
+                } else {
+                    c2.checked = true;
                 }
             }
-            if (bat2) {
-                if (bat1) {
-                    tat3 = true;
-                } else if (bat3) {
-                    tat1 = true;
-                }
-            }
-            if (bat3) {
-                if (bat2) {
-                    tat1 = true;
-                } else if (bat1) {
-                    tat2 = true;
-                }
-            }
-
-            // if (box.checked) {
-            //     box.checked = false;
-            // } else {
-            //     box.checked = true;
-            // }
         }
 
 
