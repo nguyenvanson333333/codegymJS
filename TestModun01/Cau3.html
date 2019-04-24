@@ -17,12 +17,15 @@
         document.write(sout);
 
         function sumTo(number) {
+            if (number < 1)
+                return -1;
+
             var sum = 0;
             for (i = 1; i <= number; i++) {
                 sum += i;
             }
             return sum;
-        }
+
     </script>
 </body>
 
